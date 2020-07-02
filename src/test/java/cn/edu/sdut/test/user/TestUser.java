@@ -50,5 +50,23 @@ public class TestUser {
         int row=this.userMapper.updateUser(tbuser);
         print(row);
     }
+    @Test
+    public void testDeleteUser(){
+        int userid=12;
+        int row=this.userMapper.deleteUser(userid);
+        print(row);
+    }
+    @Test
+    public void testCountUser(){
+        int row=this.userMapper.queryUserCount();
+        System.out.println("row = " + row);
+    }
+    @Test
+    public void testqueryUserById(){
+        int userid=4;
+        Tbuser tbuser=this.userMapper.queryUserById(userid);
+        System.out.println("tbuser = " + tbuser);
+    }
+
 
 }
