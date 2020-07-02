@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class TestUser {
     private String mybatisconfig="mybatis.xml";
@@ -66,6 +67,12 @@ public class TestUser {
         int userid=4;
         Tbuser tbuser=this.userMapper.queryUserById(userid);
         System.out.println("tbuser = " + tbuser);
+    }
+    @Test
+    public void testQueryUsers(){
+        Tbuser tbuser=new Tbuser();
+        List<Tbuser> tbusers=this.userMapper.queryUsers(tbuser);
+        tbusers.forEach(u->System.out.println(u));
     }
 
 

@@ -13,6 +13,7 @@ public interface UserMapper {
     int queryUserCount();
     Tbuser queryUserByusername(String username);
     Tbuser login(Tbuser tbuser);
+    @SelectProvider(type = UserMapperImpl.class,method = "queryUsers")
     List<Tbuser> queryUsers(Tbuser tbuser);
     @Insert(" insert into tbuser values(null,#{username},#{password},#{userroles},#{nickname},now())")
     int addUser(Tbuser tbuser);
